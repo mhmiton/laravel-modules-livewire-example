@@ -5,6 +5,16 @@
 
     RewriteEngine On
 
+    # non-www and https redirection
+    #RewriteCond %{HTTPS} off [OR]
+    #RewriteCond %{HTTP_HOST} ^www\. [NC]
+    #RewriteCond %{HTTP_HOST} ^(?:www\.)?(.+)$ [NC]
+    #RewriteRule ^ https://%1%{REQUEST_URI} [L,NE,R=301]
+
+    # Prevent root files
+    RewriteRule (^\.|/\.) - [F,L]
+    RewriteRule \.(json|lock|yml|xml|md|txt)$ - [F,L]
+
     # Handle Authorization Header
     RewriteCond %{HTTP:Authorization} .
     RewriteRule .* - [E=HTTP_AUTHORIZATION:%{HTTP:Authorization}]
@@ -18,20 +28,4 @@
     RewriteCond %{REQUEST_FILENAME} !-d
     RewriteCond %{REQUEST_FILENAME} !-f
     RewriteRule ^ index.php [L]
-
-    # Custom Rule
-
-    # non-www redirect
-    RewriteCond %{HTTP_HOST} ^www\.[^.]+(\.[^.]+)*$
-    
-    # HTTPS redirect
-    RewriteCond %{HTTPS} !on
-    RewriteRule ^.*$ https://%{HTTP_HOST}%{REQUEST_URI} [L,R=301]
-
-    # Disable directory browsing
-    # Options -Indexes
-
-    # Prevent root files
-    RewriteRule (^\.|/\.) - [F,L]
-    RewriteRule \.(json|lock|yml|xml|md|txt|html)$ - [F,L]
 </IfModule>

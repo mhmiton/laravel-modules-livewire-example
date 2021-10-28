@@ -13,7 +13,18 @@ class AppServiceProvider extends ServiceProvider
      */
     public function register()
     {
-        //
+        collect(\File::allFiles(base_path('libraries/*/Providers')))
+            ->map(function ($file) {
+                $provider = strtr($file->getFileName(), ['.php' => '']);
+
+                $module = \Str::before($provider, 'ServiceProvider');
+
+                $class = "\\Libraries\\{$module}\\Providers\\{$provider}";
+
+                if (class_exists($class)) {
+                    $this->app->register($class);
+                }
+            });
     }
 
     /**

@@ -13,15 +13,19 @@
         <div class="collapse navbar-collapse" id="navbarSupportedContent">
             <ul class="navbar-nav ms-auto mb-2 mb-lg-0">
                 <li class="nav-item">
-                    <a class="nav-link {{ (request()->segment(1) == '') ? 'active' : '' }}" aria-current="page" href="{{ route('home') }}">Home</a>
+                    <a class="nav-link {{ Route::is('home') ? 'active' : '' }}" aria-current="page" href="{{ route('home') }}">Home</a>
                 </li>
 
                 <li class="nav-item">
-                    <a class="nav-link {{ (request()->segment(1) == 'table') ? 'active' : '' }}" href="{{ route('table') }}">Table</a>
+                    <a class="nav-link {{ Route::is('table') ? 'active' : '' }}" href="{{ route('table') }}">Table</a>
                 </li>
 
                 <li class="nav-item">
-                    <a class="nav-link {{ (request()->segment(1) == 'form') ? 'active' : '' }}" href="{{ route('form') }}">Form</a>
+                    <a class="nav-link {{ Route::is('form') ? 'active' : '' }}" href="{{ route('form') }}">Form</a>
+                </li>
+
+                <li class="nav-item">
+                    <a class="nav-link {{ Route::is('chat') ? 'active' : '' }}" href="{{ route('chat') }}">Chat</a>
                 </li>
             </ul>
         </div>

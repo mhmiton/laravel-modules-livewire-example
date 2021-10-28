@@ -48,7 +48,7 @@ class RouteServiceProvider extends ServiceProvider
     protected function mapWebRoutes()
     {
         Route::middleware('web')
-            // ->namespace($this->moduleNamespace) // Removed For Livewire Route
+            // ->namespace($this->moduleNamespace)
             ->group(module_path('Core', '/Routes/web.php'));
     }
 
@@ -63,7 +63,7 @@ class RouteServiceProvider extends ServiceProvider
     {
         Route::prefix('api')
             ->middleware('api')
-            ->namespace($this->moduleNamespace)
+            // ->namespace($this->moduleNamespace)
             ->group(module_path('Core', '/Routes/api.php'));
     }
 }

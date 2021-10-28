@@ -30,13 +30,19 @@ Laravel Modules With Livewire Example Repository.
 ```
 
 ```sh
-    env setup:
+    Env setup:
 
     cp .env.example .env
 ```
 
 ```sh
-    Config Cache:
+    Key generate:
+
+    php artisan key:generate
+```
+
+```sh
+    Config cache:
 
     php artisan config:cache
 ```
