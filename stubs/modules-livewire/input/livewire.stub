@@ -1,0 +1,19 @@
+<?php
+
+namespace [namespace];
+
+use Livewire\Component;
+
+class [class] extends Component
+{
+    public $type = 'text';
+
+    public $name;
+
+    public $required;
+
+    public function render()
+    {
+        return view('[view]');
+    }
+}

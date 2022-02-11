@@ -9,14 +9,14 @@
                 <div class="col-6">
                     <div class="mb-3">
                         <label for="name" class="form-label">Name <i class="text-danger">*</i></label>
-                        <input type="text" class="form-control" name="name" id="name" required>
+                        <livewire:core::components.input name="name" required />
                     </div>
                 </div>
 
                 <div class="col-6">
                     <div class="mb-3">
                         <label for="username" class="form-label">User Name <i class="text-danger">*</i></label>
-                        <input type="text" class="form-control" name="username" id="username" required>
+                        <livewire:core::components.input name="username" required />
                     </div>
                 </div>
             </div>
@@ -25,14 +25,14 @@
                 <div class="col-6">
                     <div class="mb-3">
                         <label for="email" class="form-label">Email <i class="text-danger">*</i></label>
-                        <input type="email" class="form-control" name="email" id="email" required>
+                        <livewire:core::components.input type="email" name="email" required />
                     </div>
                 </div>
 
                 <div class="col-6">
                     <div class="mb-3">
                         <label for="phone" class="form-label">Phone <i class="text-danger">*</i></label>
-                        <input type="number" class="form-control" name="phone" id="phone" required>
+                        <livewire:core::components.input type="number" name="phone" required />
                     </div>
                 </div>
             </div>
