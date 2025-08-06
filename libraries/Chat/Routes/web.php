@@ -8,4 +8,4 @@ use Illuminate\Support\Facades\Route;
 |--------------------------------------------------------------------------
 */
 
-Route::get('chat', \Libraries\Chat\Http\Livewire\Pages\ChatPage::class)->name('chat');
+Route::get('chat', \Libraries\Chat\Livewire\Pages\ChatPage::class)->name('chat');

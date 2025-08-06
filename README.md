@@ -20,7 +20,7 @@ Laravel Modules With Livewire Example Repository.
 
 ```sh
     Project path:
-    
+
     cd laravel-modules-livewire-example
 ```
 ```sh
@@ -39,12 +39,6 @@ Laravel Modules With Livewire Example Repository.
     Key generate:
 
     php artisan key:generate
-```
-
-```sh
-    Config cache:
-
-    php artisan config:cache
 ```
 
 ```sh

@@ -1,0 +1,30 @@
+{
+    "name": "nwidart/counter",
+    "description": "",
+    "authors": [
+        {
+            "name": "Nicolas Widart",
+            "email": "n.widart@gmail.com"
+        }
+    ],
+    "extra": {
+        "laravel": {
+            "providers": [],
+            "aliases": {
+
+            }
+        }
+    },
+    "autoload": {
+        "psr-4": {
+            "Modules\\Counter\\": "app/",
+            "Modules\\Counter\\Database\\Factories\\": "database/factories/",
+            "Modules\\Counter\\Database\\Seeders\\": "database/seeders/"
+        }
+    },
+    "autoload-dev": {
+        "psr-4": {
+            "Modules\\Counter\\Tests\\": "tests/"
+        }
+    }
+}

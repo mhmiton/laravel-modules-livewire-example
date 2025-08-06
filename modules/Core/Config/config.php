@@ -2,8 +2,8 @@
 
 return [
     'name' => 'Core',
-    
-    'extends' => [
-        'frontend' => 'core::layouts.app'
+
+    'layouts' => [
+        'frontend' => 'core::components.layouts.app',
     ]
 ];

@@ -7,7 +7,5 @@
     "providers": [
         "Modules\\Core\\Providers\\CoreServiceProvider"
     ],
-    "aliases": {},
-    "files": [],
-    "requires": []
+    "files": []
 }

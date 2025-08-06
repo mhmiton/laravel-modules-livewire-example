@@ -2,38 +2,36 @@
 
 namespace App\Providers;
 
+use Illuminate\Support\Facades\Route;
 use Illuminate\Support\ServiceProvider;
+use Livewire\Livewire;
 
 class AppServiceProvider extends ServiceProvider
 {
     /**
      * Register any application services.
-     *
-     * @return void
      */
-    public function register()
+    public function register(): void
     {
-        collect(\File::allFiles(base_path('libraries/*/Providers')))
+        // Register all service providers from libraries's composer.json
+        collect(glob(base_path('libraries/*/composer.json')))
             ->map(function ($file) {
-                $provider = strtr($file->getFileName(), ['.php' => '']);
+                $json = json_decode(file_get_contents($file), true);
 
-                $module = \Str::before($provider, 'ServiceProvider');
+                $providers = data_get($json, 'extra.laravel.providers', []);
 
-                $class = "\\Libraries\\{$module}\\Providers\\{$provider}";
-
-                if (class_exists($class)) {
-                    $this->app->register($class);
-                }
+                collect($providers)->each(fn ($provider) => $this->app->register($provider));
             });
     }
 
     /**
      * Bootstrap any application services.
-     *
-     * @return void
      */
-    public function boot()
+    public function boot(): void
     {
-        //
+        // Allowed sub-folders for livewire
+        Livewire::setScriptRoute(fn ($handle) => Route::get(parse_url((string) config('app.url'), PHP_URL_PATH).'/livewire/livewire.js', $handle));
+
+        Livewire::setUpdateRoute(fn ($handle) => Route::post(parse_url((string) config('app.url'), PHP_URL_PATH).'/livewire/update', $handle)->middleware('web'));
     }
 }

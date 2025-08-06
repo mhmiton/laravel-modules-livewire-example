@@ -1,0 +1,26 @@
+{
+    "name": "libraries/seo",
+    "description": "",
+    "autoload": {
+        "psr-4": {
+            "Libraries\\Seo\\": "app/",
+            "Libraries\\Seo\\Database\\Factories\\": "database/factories/",
+            "Libraries\\Seo\\Database\\Seeders\\": "database/seeders/"
+        }
+    },
+    "autoload-dev": {
+        "psr-4": {
+            "Libraries\\Seo\\Tests\\": "tests/"
+        }
+    },
+    "extra": {
+        "laravel": {
+            "providers": [
+                "Libraries\\Seo\\Providers\\SeoServiceProvider"
+            ],
+            "aliases": {
+
+            }
+        }
+    }
+}

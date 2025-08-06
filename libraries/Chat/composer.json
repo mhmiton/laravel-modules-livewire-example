@@ -1,0 +1,26 @@
+{
+    "name": "libraries/chat",
+    "description": "",
+    "autoload": {
+        "psr-4": {
+            "Libraries\\Chat\\": "src/",
+            "Libraries\\Chat\\Database\\Factories\\": "database/factories/",
+            "Libraries\\Chat\\Database\\Seeders\\": "database/seeders/"
+        }
+    },
+    "autoload-dev": {
+        "psr-4": {
+            "Libraries\\Chat\\Tests\\": "tests/"
+        }
+    },
+    "extra": {
+        "laravel": {
+            "providers": [
+                "Libraries\\Chat\\Providers\\ChatServiceProvider"
+            ],
+            "aliases": {
+
+            }
+        }
+    }
+}

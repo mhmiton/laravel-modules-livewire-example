@@ -1,0 +1,26 @@
+{
+    "name": "libraries/pos",
+    "description": "",
+    "autoload": {
+        "psr-4": {
+            "Libraries\\Pos\\": "/",
+            "Libraries\\Pos\\Database\\Factories\\": "database/factories/",
+            "Libraries\\Pos\\Database\\Seeders\\": "database/seeders/"
+        }
+    },
+    "autoload-dev": {
+        "psr-4": {
+            "Libraries\\Pos\\Tests\\": "tests/"
+        }
+    },
+    "extra": {
+        "laravel": {
+            "providers": [
+                "Libraries\\Pos\\Providers\\PosServiceProvider"
+            ],
+            "aliases": {
+
+            }
+        }
+    }
+}

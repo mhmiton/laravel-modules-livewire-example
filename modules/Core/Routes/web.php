@@ -13,6 +13,6 @@ use Illuminate\Support\Facades\Route;
 |
 */
 
-Route::get('/', \Modules\Core\Http\Livewire\Pages\HomePage::class)->name('home');
-Route::get('table', \Modules\Core\Http\Livewire\Pages\TablePage::class)->name('table');
-Route::get('form', \Modules\Core\Http\Livewire\Pages\FormPage::class)->name('form');
+Route::get('/', \Modules\Core\Livewire\Pages\HomePage::class)->name('home');
+Route::get('table', \Modules\Core\Livewire\Pages\TablePage::class)->name('table');
+Route::get('form', \Modules\Core\Livewire\Pages\FormPage::class)->name('form');
